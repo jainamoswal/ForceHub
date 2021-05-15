@@ -1,0 +1,8 @@
+telethon
+flask 
+gunicorn
+requests
+pymongo
+dnspython
+authlib
+pytgauth
