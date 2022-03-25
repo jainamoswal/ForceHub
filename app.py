@@ -30,14 +30,14 @@ github = oauth.register (
 # '/' will make user redirect to your GitHub Profile.
 @app.route('/')
 def main():
-	return redirect('https://www.github.com/' + var.GITHUB_USERNAME)
+	return redirect(f'https://www.github.com/{var.GITHUB_USERNAME}')
 
 # '/new' route will be 1st entry point.
 @app.route('/new', methods=['GET'])
 def new():
 	if verify(request.args.to_dict(), var.BOT_TOKEN):
 		session['id'] = request.args.get('id') # makes a session and adds userid as 'id' to get the session while adding it in 3rd step.
-		return redirect(request.host_url + 'login')
+		return redirect(f'{request.host_url}login')
 	return redirect('https://http.cat/401')
 
 # '/login' is 2nd entry pint from '/new'

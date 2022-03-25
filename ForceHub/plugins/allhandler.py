@@ -20,7 +20,5 @@ async def allmsg(event):
         await event.reply(f"You need to Authorise first and follow my owner's [GitHub profile](https://www.github.com/{var.GITHUB_USERNAME}) to chat in this group.", buttons=[
                         [Button.auth("⚡️ Authenticate ⚡️", url=f'{var.APP_DOMAIN}/new', write_access=True, fwd_text="Don't try to be a noob.")],
                         [Button.inline("Unmute Me", data=f'v_{event.chat.id}_{event.sender_id}')]
-                        
+
                     ], link_preview=False)
-    else:
-        pass
